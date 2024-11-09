@@ -1,10 +1,20 @@
 import { getLocalStorage } from "./utils.mjs";
 
+function addToCart(newItem) {
+  // Retrieve existing cart items or initialize an empty array
+  let cartItems = getLocalStorage("so-cart") || [];
+  // Add the new item to the array
+  cartItems.push(newItem);
+  // Save the updated array back to localStorage
+  setLocalStorage("so-cart", cartItems);
+}
+
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
+  const cartItems = getLocalStorage("so-cart") || [];
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
+
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">

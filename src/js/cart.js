@@ -10,7 +10,12 @@ function addToCart(newItem) {
 }
 
 function renderCartContents() {
+<<<<<<< HEAD
   const cartItems = getLocalStorage("so-cart") || [];
+=======
+  const cartItems = [];
+  cartItems.push(getLocalStorage("so-cart"));
+>>>>>>> cc89552e7e56155840968c5789ab2295792cd96e
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }

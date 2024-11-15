@@ -29,3 +29,11 @@ export function getParams(param) {
 
   return product
 }
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+  const htmlList = list.map(templateFn)
+  if (clear == true) {
+    parentElement.innerHTML = ""
+  }
+  parentElement.insertAdjacentHTML(position, htmlList.join(""))
+}

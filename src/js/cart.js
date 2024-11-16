@@ -27,3 +27,13 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
+function updateCartCount(count) {
+  const cartCountElement = document.querySelector('.cart-count');
+  if (cartCountElement) {
+    cartCountElement.textContent = count;
+  }
+}
+
+// Call the function with the desired item count
+updateCartCount();

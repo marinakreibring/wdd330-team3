@@ -1,4 +1,4 @@
-import Alert from './Alert.js';
+import Alert from './alerts.mjs';
 
 // Fetch the alert data from the alerts.json file
 fetch('./alerts.json')

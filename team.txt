@@ -1,7 +1,0 @@
-wdd 330 team 3 project
-Trello board: https://trello.com/b/GuT07sWc/wdd-330-block-sleep-outside-team3
-site URL : https://672cd5cf58a448a2b345eb37--peppy-kleicha-ea7a91.netlify.app/
-
-Team members:
-Marina Kreibring
-Santiago Chaparro

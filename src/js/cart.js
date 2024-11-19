@@ -40,3 +40,10 @@ function calculateTotalPrice(items) {
 
 renderCartContents();
 
+
+function updateCartCount(count) {
+  const cartCountElement = document.querySelector('.cart-count');
+  if (cartCountElement) {
+    cartCountElement.textContent = count;
+  }
+}

@@ -1,10 +1,11 @@
 import ProductData from "./ProductData.mjs";
+import { setLocalStorage } from "./utils.mjs";
 
 export default class ProductDetails {
     constructor(productId, dataSource) {
       this.productId = productId
       this.product = {}
-      this.dataSource = dataSource
+      this.dataSource = new ProductData("tents")
     }
     async init() {
         // use our datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it

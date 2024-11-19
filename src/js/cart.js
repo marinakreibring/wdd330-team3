@@ -5,6 +5,7 @@ function renderCartContents() {
   cartItems.push(getLocalStorage("so-cart"));
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  calculateTotalPrice(cartItems)
 }
 
 function cartItemTemplate(item) {
@@ -26,7 +27,19 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
+function calculateTotalPrice(items) {
+  const cartFooter = document.querySelector(".cart-footer")
+  const cartTotal = document.querySelector(".cart-total")
+  let total = 0 
+  items.forEach(item => {
+    total += parseFloat(item.FinalPrice)
+  });
+  cartTotal.innerHTML += `$${total}`
+  cartFooter.classList.remove("hide")
+}
+
 renderCartContents();
+
 
 function updateCartCount(count) {
   const cartCountElement = document.querySelector('.cart-count');
@@ -34,6 +47,3 @@ function updateCartCount(count) {
     cartCountElement.textContent = count;
   }
 }
-
-// Call the function with the desired item count
-updateCartCount(1);

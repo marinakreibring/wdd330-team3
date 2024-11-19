@@ -35,5 +35,5 @@ function updateCartCount(count) {
   }
 }
 
-// Call the function with the desired item count
+// Call the function
 updateCartCount();

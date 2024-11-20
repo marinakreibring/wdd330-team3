@@ -48,3 +48,4 @@ function updateCartCount(count) {
     cartCountElement.textContent = count;
   }
 }
+updateCartCount(cartItems)

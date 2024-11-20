@@ -37,9 +37,10 @@ export default class ProductDetails {
     }
 
     addProductToCart() {
-        cart = getLocalStorage("so-cart") ?? [];
-        cart.push(this.product);
-        setLocalStorage("so-cart", cart);
+      let cart = getLocalStorage("so-cart") ?? []
+      
+      cart.push(this.product)
+      setLocalStorage("so-cart", cart);
     }
 
     renderProductDetails(selector) {

@@ -1,8 +1,7 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
-  const cartItems = [];
-  cartItems.push(getLocalStorage("so-cart"));
+  const cartItems = getLocalStorage("so-cart")
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
   calculateTotalPrice(cartItems)

@@ -26,9 +26,14 @@ class ShoppingCart{
 
     renderCart() {
         const cartItems = getLocalStorage(this.key)
-        renderListWithTemplate(this.cartItemTemplate, this.parentSelector, cartItems)
-        this.calculateTotalPrice(cartItems)
-        this.updateCartCount(cartItems)
+        if (cartItems) {
+          renderListWithTemplate(this.cartItemTemplate, this.parentSelector, cartItems)
+          this.calculateTotalPrice(cartItems)
+          this.updateCartCount(cartItems)
+        } else {
+          this.parentSelector.textContent = "No cart contents yet."
+        }
+        
     }
 
     calculateTotalPrice(items) {

@@ -61,8 +61,7 @@ export async function loadHeaderFooter() {
 }
 
 export async function loadTemplate(path) {
-  const html = (await fetch(path)).text()
-  const template = document.createElement("template")
-  template.innerHTML = html
-  return template
+  const res = await fetch(path);
+  const template = await res.text();
+  return template;
 }

@@ -139,7 +139,7 @@ button {
 .product-list, .product-category {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style-type: none;
   padding: 0;
 }
@@ -147,7 +147,8 @@ button {
   padding: 1em 3em;
 }
 .product-category-logo {
-  max-width: 150px;
+  width: 100px;
+  height: auto;
 }
 .product-list a, .product-category a {
   text-decoration: none;
@@ -228,6 +229,10 @@ button {
 .hide {
   display: none;
 }
+footer {
+  font-size: var(--small-font);
+  padding: 1em;
+}
 
 @media screen and (min-width: 500px) {
   body {
@@ -241,9 +246,12 @@ button {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+  .product-category-logo {
+    width: 150px;
+  }
 }
-
-footer {
-  font-size: var(--small-font);
-  padding: 1em;
+@media screen and (min-width: 768px) {
+  .product-category-logo {
+    width: 200px;
+  }
 }

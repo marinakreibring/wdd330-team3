@@ -43,15 +43,6 @@ import { loadHeaderFooter } from "./utils.mjs";
 // renderCartContents();
 
 
-<<<<<<< HEAD
-function updateCartCount(count) {
-  const cartCountElement = document.querySelector('.cart-count');
-  if (cartCountElement) {
-    cartCountElement.textContent = count;
-  }
-}
-updateCartCount(cartItems)
-=======
 // function updateCartCount(count) {
 //   const cartCountElement = document.querySelector(".cart-count");
 //   if (cartCountElement) {
@@ -64,4 +55,3 @@ loadHeaderFooter()
 
 const cart = new ShoppingCart("so-cart", ".product-list")
 cart.renderCart()
->>>>>>> 5c8cdf7d5bad0ed40d9f7c13913bed98ca4e8fd7

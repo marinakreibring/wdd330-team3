@@ -136,16 +136,25 @@ button {
 .products {
   padding: 0.5em;
 }
-.product-list {
+.product-list, .product-category {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
 }
-.product-list a {
+.product-category {
+  padding: 1em 3em;
+}
+.product-category-logo {
+  max-width: 150px;
+}
+.product-list a, .product-category a {
   text-decoration: none;
   color: var(--dark-grey);
+}
+.product-category a {
+  text-align: center;
 }
 /* Styles for product lists */
 .product-card {
@@ -211,12 +220,10 @@ button {
   grid-column: 3;
 }
 
-.cart-card__price {
+.cart-card__price, .cart-footer {
   grid-row: 2;
   grid-column: 3;
 }
-
-/*.cart-footer {}*/
 
 .hide {
   display: none;

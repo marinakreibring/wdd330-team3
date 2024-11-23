@@ -6,7 +6,7 @@ function productDetailsTemplate(product) {
     <h2 class="divider">${product.NameWithoutBrand}</h2>
     <img
       class="divider"
-      src="${product.Image}"
+      src="${product.Images.PrimaryLarge}"
       alt="${product.NameWithoutBrand}"
     />
     <p class="product-card__price">$${product.FinalPrice}</p>
@@ -37,9 +37,10 @@ export default class ProductDetails {
     }
 
     addProductToCart() {
-        cart = getLocalStorage("so-cart") ?? [];
-        cart.push(this.product);
-        setLocalStorage("so-cart", cart);
+      let cart = getLocalStorage("so-cart") ?? []
+      
+      cart.push(this.product)
+      setLocalStorage("so-cart", cart);
     }
 
     renderProductDetails(selector) {

@@ -81,7 +81,7 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button, .wf input[type="submit"] {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -250,6 +250,79 @@ footer {
     width: 150px;
   }
 }
+
+/* ========== FORM STYLING ========== */
+.wf {
+  max-width: 400px;
+  margin: 0;
+  width: 100%;
+  padding: 0 1em;
+}
+.wf fieldset {
+  border: 1px solid #b7b7b7;
+  border-radius: 6px;
+  font-family: var(--font-p);
+  width: 100%;
+}
+
+.wf legend {
+  color: #a96144;
+  padding-top: .5rem;
+}
+
+.wf label {
+  display: block;
+  padding-top: 1rem;
+  font-size: .9rem;
+}
+
+.wf input[type="text"] {
+  background-color: #eee;
+  display: block;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: .75rem;
+  color: #555;
+  width: 90%;
+  appearance: none;
+}
+
+.wf input[type="submit"] {
+  border: none;
+  background-image: linear-gradient(var(--primary-color-bg), var(--secondary-color-bg));
+  color: #fff;
+  border-radius: 6px;
+  padding: .8rem;
+  width: 90%;
+  max-width: 400px;
+  margin: 1rem 3% 2rem 3%;
+  
+  box-shadow: 1px 1px 4px #999;
+  font-weight: 600;
+}
+
+.wf input[type="submit"]:hover {
+  text-shadow: #fff 1px 1px 1em;
+}
+
+.wf input[type="submit"]:active {
+  background-image: linear-gradient(var(--secondary-color-bg), var(--primary-color-bg));
+}
+
+.wf input:required, .wf select:required {
+  border-left: solid 8px red;
+}
+
+.wf input:required:valid, .wf select:required:valid {
+  border-left: solid 8px green;
+}
+
+
+.order-summary {
+  padding: 0 1em;
+}
+
+
 @media screen and (min-width: 768px) {
   .product-category-logo {
     width: 200px;

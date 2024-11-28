@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ProductData from "./ExternalServices.mjs";
 import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 
 function productDetailsTemplate(product) {

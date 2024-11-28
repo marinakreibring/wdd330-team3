@@ -314,7 +314,7 @@ footer {
 }
 
 .wf input:required:valid, .wf select:required:valid {
-  border-bottom: solid 8px green;
+  border-left: solid 8px green;
 }
 
 

@@ -22,7 +22,7 @@
           <h3>Order Summary</h3>
         </section>
         </section>
-        <form action="" method="post" class="wf">
+        <form name="checkout" class="wf">
           <fieldset>
             <legend>User</legend>
             <label>First Name<input type="text" name="fname" required></label>
@@ -33,15 +33,15 @@
             <label>Street Adress<input type="text" name="street" required></label>
             <label>City<input type="text" name="city" required></label>
             <label>State<input type="text" name="state" required></label>
-            <label>Zip Code<input type="text" name="zipcode" required></label>
+            <label>Zip Code<input type="text" name="zip" required></label>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
-            <label>Credit Card Number<input type="text" name="cardnumber" required></label>
-            <label>Expiration Date<input type="text" name="expdate" required></label>
-            <label>Security Code<input type="text" name="securitycode" required></label>
+            <label>Credit Card Number<input type="text" name="cardNumber" required></label>
+            <label>Expiration Date<input type="text" name="expiration" required></label>
+            <label>Security Code<input type="text" name="code" required></label>
           </fieldset>
-          <input type="submit" value="Checkout">
+          <button id="checkoutSubmit" type="submit">Checkout</button>
         </form>
         
     </main>

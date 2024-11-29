@@ -250,8 +250,6 @@ footer {
     width: 150px;
   }
 }
-<<<<<<< Updated upstream
-=======
 
 /* ========== FORM STYLING ========== */
 .wf {
@@ -334,11 +332,4 @@ footer {
 .alert button {
   margin: 0;
   padding: .5em 1em;
-}
-
->>>>>>> Stashed changes
-@media screen and (min-width: 768px) {
-  .product-category-logo {
-    width: 200px;
-  }
 }

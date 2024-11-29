@@ -1,7 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
 
-<<<<<<< Updated upstream
-=======
 const checkout = new CheckoutProcess("so-cart", ".order-summary")
 checkout.init()
 
@@ -17,5 +15,4 @@ document.querySelector("#checkoutSubmit")?.addEventListener("click", (e) => {
   }
 });
 
->>>>>>> Stashed changes
 loadHeaderFooter()

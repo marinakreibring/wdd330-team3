@@ -56,7 +56,7 @@ export default class CheckoutProcess {
 
     calculateTotal() {
         this.shipping = 10 + (this.list.length -1) * 2  
-        this.orderTotal = this.itemTotal * this.tax + this.shipping
+        this.orderTotal = this.itemTotal + this.itemTotal * this.tax + this.shipping
 
         this.displayOrderTotals()
     }

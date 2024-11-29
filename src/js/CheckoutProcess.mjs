@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs"
+import { formatNumberToUSD, getLocalStorage, setLocalStorage } from "./utils.mjs"
 import ExternalServices from "./ExternalServices.mjs"
 
 const services = new ExternalServices();
@@ -47,9 +47,11 @@ export default class CheckoutProcess {
     }
 
     calculateSubtotal() {
-        this.list.forEach(item => {
-            this.itemTotal += item.FinalPrice
-        })
+        if (this.list.length > 0) {
+            this.list.forEach(item => {
+                this.itemTotal += item.FinalPrice
+            })
+        }
     }
 
     calculateTotal() {
@@ -62,31 +64,35 @@ export default class CheckoutProcess {
     displayOrderTotals() {
         const html = `
         <p><strong>Items in cart:</strong> ${this.list.length}</p>
-        <p><strong>Subtotal:</strong> $${this.itemTotal}</p>
-        <p><strong>Shipping Estimate:</strong> $${this.shipping}</p>
+        <p><strong>Subtotal:</strong> ${formatNumberToUSD(this.itemTotal)}</p>
+        <p><strong>Shipping Estimate:</strong> ${formatNumberToUSD(this.shipping)}</p>
         <p><strong>Tax:</strong> ${this.tax*100}%</p>
-        <p><strong>Total: $${this.orderTotal.toFixed(2)}</strong></p>`
+        <p><strong>Total: ${formatNumberToUSD(this.orderTotal)}</strong></p>`
 
-        this.outputSelector.insertAdjacentHTML("beforeend", html)
-        // this.outputSelector.innerHTML = html
+        this.outputSelector?.insertAdjacentHTML("beforeend", html)
     }
 
     async checkout() {
-        const formElement = document.forms["checkout"];
+        const formElement = document.forms["checkout"]
     
-        const json = formDataToJSON(formElement);
+        const json = formDataToJSON(formElement)
         // add totals, and item details
-        json.orderDate = new Date();
-        json.orderTotal = this.orderTotal;
-        json.tax = this.tax;
-        json.shipping = this.shipping;
-        json.items = packageItems(this.list);
-        console.log(json);
+        json.orderDate = new Date()
+        json.orderTotal = this.orderTotal
+        json.tax = this.tax
+        json.shipping = this.shipping
+        json.items = packageItems(this.list)
+        console.log(json)
         try {
-          const res = await services.checkout(json);
-          console.log(res);
+          const res = await services.checkout(json)
+          console.log(res)
+          window.location.href = 'success.html'
+          setLocalStorage("so-cart", [])
         } catch (err) {
-          console.log(err);
+            removeAllAlerts();
+            for (let message in err.message) {
+              alertMessage(err.message[message]);
+            }
         }
     }
 }

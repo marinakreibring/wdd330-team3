@@ -5,7 +5,7 @@ import { loadHeaderFooter, getParams } from './utils.mjs';
 loadHeaderFooter();
 
 const category = getParams('category');
-// first create an instance of our ProductData class.
+// first create an instance of our ExternalServices class.
 const dataSource = new ExternalServices();
 // then get the element we want the product list to render in
 const listElement = document.querySelector('.product-list');

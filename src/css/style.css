@@ -81,7 +81,7 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button, .wf input[type="submit"] {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -332,4 +332,9 @@ footer {
 .alert button {
   margin: 0;
   padding: .5em 1em;
+
+@media screen and (min-width: 768px) {
+  .product-category-logo {
+    width: 200px;
+  
 }

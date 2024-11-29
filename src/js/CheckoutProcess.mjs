@@ -70,7 +70,6 @@ export default class CheckoutProcess {
         <p><strong>Total: ${formatNumberToUSD(this.orderTotal)}</strong></p>`
 
         this.outputSelector?.insertAdjacentHTML("beforeend", html)
-        // this.outputSelector.innerHTML = html
     }
 
     async checkout() {

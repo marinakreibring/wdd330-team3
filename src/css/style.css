@@ -251,6 +251,12 @@ footer {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .product-category-logo {
+    width: 200px;
+  }
+}
+
 /* ========== FORM STYLING ========== */
 .wf {
   max-width: 400px;
@@ -332,9 +338,4 @@ footer {
 .alert button {
   margin: 0;
   padding: .5em 1em;
-
-@media screen and (min-width: 768px) {
-  .product-category-logo {
-    width: 200px;
-  
 }

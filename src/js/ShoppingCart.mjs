@@ -1,4 +1,4 @@
-import { getLocalStorage, renderListWithTemplate, setLocalStorage } from "./utils.mjs";
+import { formatNumberToUSD, setLocalStorage, getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 
 class ShoppingCart{
     constructor (key, parentSelector) {
@@ -39,12 +39,14 @@ class ShoppingCart{
     calculateTotalPrice(items) {
         const cartFooter = document.querySelector(".cart-footer")
         const cartTotal = document.querySelector(".cart-total")
+        const cartCheckoutButton = document.querySelector(".cart-checkout-button")
         let total = 0 
         items.forEach(item => {
           total += parseFloat(item.FinalPrice)
         });
-        cartTotal.innerHTML += `$${total}`
+        cartTotal.innerHTML += `${formatNumberToUSD(total)}`
         cartFooter.classList.remove("hide")
+        cartCheckoutButton.classList.remove("hide")
     }
 
     updateCartCount() {

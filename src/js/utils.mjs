@@ -76,3 +76,37 @@ function updateCartCount() {
       cartCountElement.textContent = count;
     }
 }
+
+export function alertMessage(message, scroll=true) {
+  const alert = document.createElement('div');
+  alert.classList.add("alert")
+
+  alert.innerHTML = `<p>${message}</p> <button>X</button>`
+
+  alert.addEventListener("click", (e) => {
+    if (e.target.innerText === "X") {
+      main.removeChild(alert)
+    }
+  })
+  const main = document.querySelector('main');
+  main.prepend(alert);
+
+  if (scroll) {
+    window.scrollTo(0,0)
+  }
+}
+
+export function removeAllAlerts() {
+  const main = document.querySelector("main")
+  const alerts = document.querySelectorAll(".alert")
+  alerts.forEach(alert => {
+    main.removeChild(alert)
+  })
+}
+
+export function formatNumberToUSD(number) { 
+  return new Intl.NumberFormat('en-US', { 
+    style: 'currency', 
+    currency: 'USD', 
+    minimumFractionDigits: 2, 
+    maximumFractionDigits: 2, }).format(number); }

@@ -1,5 +1,5 @@
-import ProductData from "./ProductData.mjs";
-import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+import ExternalServices from "./ExternalServices.mjs";
+import { setLocalStorage, getLocalStorage, alertMessage } from "./utils.mjs";
 
 function productDetailsTemplate(product) {
   return `<section class="product-detail"> <h3>${product.Brand.Name}</h3>
@@ -23,7 +23,7 @@ export default class ProductDetails {
     constructor(productId, dataSource) {
       this.productId = productId
       this.product = {}
-      this.dataSource = new ProductData("tents")
+      this.dataSource = new ExternalServices("tents")
     }
     async init() {
         // use our datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it
@@ -41,6 +41,7 @@ export default class ProductDetails {
       
       cart.push(this.product)
       setLocalStorage("so-cart", cart);
+      alertMessage("Product added to cart")
     }
 
     renderProductDetails(selector) {

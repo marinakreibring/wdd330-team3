@@ -40,8 +40,10 @@ export default class ProductDetails {
       let cart = getLocalStorage("so-cart") ?? []
       
       cart.push(this.product)
+
       setLocalStorage("so-cart", cart);
       alertMessage("Product added to cart")
+      
     }
 
     renderProductDetails(selector) {

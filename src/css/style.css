@@ -339,3 +339,36 @@ footer {
   margin: 0;
   padding: .5em 1em;
 }
+
+/* ========== CART ANIMATION STYLING ========== */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+.cart.shake {
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.cart-count.pulse {
+  animation: pulse 1s infinite;
+}

@@ -56,7 +56,7 @@ export default class CheckoutProcess {
 
     calculateTotal() {
         this.shipping = 10 + (this.list.length -1) * 2  
-        this.orderTotal = (this.itemTotal + this.shipping) * this.tax
+        this.orderTotal = this.itemTotal + this.itemTotal * this.tax + this.shipping
 
         this.displayOrderTotals()
     }
@@ -66,7 +66,7 @@ export default class CheckoutProcess {
         <p><strong>Items in cart:</strong> ${this.list.length}</p>
         <p><strong>Subtotal:</strong> ${formatNumberToUSD(this.itemTotal)}</p>
         <p><strong>Shipping Estimate:</strong> ${formatNumberToUSD(this.shipping)}</p>
-        <p><strong>Tax:</strong> ${this.tax*100}%</p>
+        <p><strong>Tax:</strong> ${formatNumberToUSD(this.itemTotal*this.tax)}</p>
         <p><strong>Total: ${formatNumberToUSD(this.orderTotal)}</strong></p>`
 
         this.outputSelector?.insertAdjacentHTML("beforeend", html)
